@@ -14,8 +14,8 @@ export const GallerySkeleton = ({ itemCount = 6 }: GallerySkeletonProps) => {
             <Skeleton className="h-4 w-64 md:h-5 md:w-80" />
           </div>
           <div className="mt-8 flex shrink-0 items-center justify-start gap-2">
-            <Skeleton className="h-10 w-10" />
-            <Skeleton className="h-10 w-10" />
+            <Skeleton className="size-10" />
+            <Skeleton className="size-10" />
           </div>
         </div>
       </div>
@@ -24,15 +24,12 @@ export const GallerySkeleton = ({ itemCount = 6 }: GallerySkeletonProps) => {
           <div className="hide-scrollbar w-full max-w-full md:-mr-4 md:ml-8 2xl:ml-[max(8rem,calc(50vw-700px+1rem))] 2xl:mr-[max(0rem,calc(50vw-700px-1rem))]">
             <div className="flex gap-8 overflow-hidden">
               {Array.from({ length: itemCount }).map((_, index) => (
-                <div
-                  key={index}
-                  className="ml-8 flex-shrink-0 md:max-w-[452px]"
-                >
+                <div key={index} className="ml-8 shrink-0 md:max-w-[452px]">
                   <div className="group flex flex-col justify-between">
                     <div>
                       <div className="aspect-3/2 flex overflow-clip rounded-xl">
                         <div className="flex-1">
-                          <Skeleton className="h-full w-full" />
+                          <Skeleton className="size-full" />
                         </div>
                       </div>
                     </div>
@@ -47,7 +44,7 @@ export const GallerySkeleton = ({ itemCount = 6 }: GallerySkeletonProps) => {
                     </div>
                     <div className="flex items-center">
                       <Skeleton className="h-4 w-20" />
-                      <Skeleton className="ml-2 h-5 w-5" />
+                      <Skeleton className="ml-2 size-5" />
                     </div>
                   </div>
                 </div>
