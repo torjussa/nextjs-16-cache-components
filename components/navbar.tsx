@@ -4,11 +4,9 @@ import Link from "next/link";
 
 import { navItems } from "@/config/nav-items";
 
-import { Button } from "@/components/ui/button";
-
 import { ModeSwitcher } from "@/components/mode-switcher";
-
-import { Skeleton } from "./ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function Navbar() {
   return (
@@ -16,7 +14,7 @@ export function Navbar() {
       <div className="flex w-full items-center h-full gap-1 px-4 md:gap-5 md:px-6 max-w-[1400px] mx-auto">
         <Link href="/" className="hidden md:flex items-center gap-2">
           <h2 className={`${"retro"} hidden font-bold md:inline-block text-xs`}>
-            NextJS16 Cache Components
+            NextJS v16 Cache Components
           </h2>
         </Link>
 
@@ -31,6 +29,7 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
+
         <div className="ml-auto flex items-center gap-2">
           <Link href="https://github.com/TheOrcDev/8bitcn-ui" target="_blank">
             <Button
