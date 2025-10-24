@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 export interface GalleryItem {
   id: string;
@@ -104,7 +105,9 @@ export const Gallery = ({
                     <div className="aspect-3/2 flex overflow-clip rounded-xl">
                       <div className="flex-1">
                         <div className="relative h-full w-full origin-bottom transition duration-300 group-hover:scale-105">
-                          <img
+                          <Image
+                            width={1000}
+                            height={1000}
                             src={item.image}
                             alt={item.title}
                             className="h-full w-full object-cover object-center"
@@ -113,7 +116,7 @@ export const Gallery = ({
                       </div>
                     </div>
                   </div>
-                  <div className="mb-2 line-clamp-3 break-words pt-4 text-lg font-medium md:mb-3 md:pt-4 md:text-xl lg:pt-4 lg:text-2xl">
+                  <div className="mb-2 line-clamp-3 wrap-break-words pt-4 text-lg font-medium md:mb-3 md:pt-4 md:text-xl lg:pt-4 lg:text-2xl">
                     {item.title}
                   </div>
                   <div className="text-muted-foreground mb-8 line-clamp-2 text-sm md:mb-12 md:text-base lg:mb-9">

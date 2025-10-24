@@ -20,7 +20,7 @@ export const GallerySkeleton = ({ itemCount = 6 }: GallerySkeletonProps) => {
         </div>
       </div>
       <div className="w-full max-w-full">
-        <div className="relative w-full max-w-full md:left-[-1rem]">
+        <div className="relative w-full max-w-full md:left-4">
           <div className="hide-scrollbar w-full max-w-full md:-mr-4 md:ml-8 2xl:ml-[max(8rem,calc(50vw-700px+1rem))] 2xl:mr-[max(0rem,calc(50vw-700px-1rem))]">
             <div className="flex gap-8 overflow-hidden">
               {Array.from({ length: itemCount }).map((_, index) => (
