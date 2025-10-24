@@ -24,7 +24,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Gallery items={await getCategories()} />
+      <Gallery items={await getCategories()} heading="Categories" />
     </main>
   );
 }

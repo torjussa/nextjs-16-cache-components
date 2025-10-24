@@ -19,17 +19,17 @@ export interface GalleryItem {
   image: string;
 }
 
-interface Gallery6Props {
+interface GalleryProps {
   heading?: string;
-  demoUrl?: string;
   items?: GalleryItem[];
+  description?: string;
 }
 
 export const Gallery = ({
   heading = "Gallery",
-  demoUrl = "https://www.shadcnblocks.com",
   items = [],
-}: Gallery6Props) => {
+  description = "This is a gallery of items",
+}: GalleryProps) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -51,17 +51,9 @@ export const Gallery = ({
     <section className="py-12">
       <div className="container">
         <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
-          <div>
-            <h2 className="mb-3 text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-              {heading}
-            </h2>
-            <a
-              href={demoUrl}
-              className="group flex items-center gap-1 text-sm font-medium md:text-base lg:text-lg"
-            >
-              Book a demo
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </a>
+          <div className="flex flex-col gap-2 md:gap-4">
+            <h2 className="text-3xl font-semibold md:text-4xl">{heading}</h2>
+            <p className="text-sm text-muted-foreground">{description}</p>
           </div>
           <div className="mt-8 flex shrink-0 items-center justify-start gap-2">
             <Button
