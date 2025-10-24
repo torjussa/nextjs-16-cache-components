@@ -7,6 +7,7 @@ import { navItems } from "@/config/nav-items";
 import { ModeSwitcher } from "@/components/mode-switcher";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { StarsCount } from "./stars-count";
 
 export function Navbar() {
   return (
@@ -49,17 +50,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  );
-}
-
-export async function StarsCount() {
-  const data = await fetch("https://api.github.com/repos/TheOrcDev/8bitcn-ui");
-  const json = await data.json();
-  const stars = json.stargazers_count;
-
-  return (
-    <span className="text-muted-foreground w-6 text-xs tabular-nums retro">
-      {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars}
-    </span>
   );
 }
