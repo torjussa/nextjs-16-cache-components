@@ -1,7 +1,10 @@
+import { cacheLife } from "next/cache";
+
 export async function StarsCount() {
-  const data = await fetch("https://api.github.com/repos/TheOrcDev/8bitcn-ui", {
-    next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
-  });
+  "use cache";
+  cacheLife("hours");
+
+  const data = await fetch("https://api.github.com/repos/TheOrcDev/8bitcn-ui");
   const json = await data.json();
   const stars = json.stargazers_count;
 
