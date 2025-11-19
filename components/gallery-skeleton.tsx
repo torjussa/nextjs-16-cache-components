@@ -10,7 +10,6 @@ export const GallerySkeleton = ({ itemCount = 6 }: GallerySkeletonProps) => {
       <div className="container">
         <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
           <div className="flex flex-col gap-2 md:gap-4">
-            <Skeleton className="h-10 w-48 md:h-12 md:w-56" />
             <Skeleton className="h-4 w-64 md:h-5 md:w-80" />
           </div>
           <div className="mt-8 flex shrink-0 items-center justify-start gap-2">
@@ -35,12 +34,6 @@ export const GallerySkeleton = ({ itemCount = 6 }: GallerySkeletonProps) => {
                     </div>
                     <div className="mb-2 pt-4 md:mb-3 md:pt-4 lg:pt-4">
                       <Skeleton className="h-6 w-96 md:h-7 lg:h-8" />
-                      <Skeleton className="mt-2 h-6 w-3/4 md:h-7 lg:h-8" />
-                      <Skeleton className="mt-2 h-6 w-1/2 md:h-7 lg:h-8" />
-                    </div>
-                    <div className="mb-8 md:mb-12 lg:mb-9">
-                      <Skeleton className="h-4 w-96 md:h-5" />
-                      <Skeleton className="mt-1 h-4 w-5/6 md:h-5" />
                     </div>
                     <div className="flex items-center">
                       <Skeleton className="h-4 w-20" />

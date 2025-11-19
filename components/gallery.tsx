@@ -14,9 +14,8 @@ import Image from "next/image";
 
 export interface GalleryItem {
   id: string;
-  title: string;
-  summary: string;
-  url: string;
+  name: string;
+  slug: string;
   image: string;
 }
 
@@ -27,7 +26,6 @@ interface GalleryProps {
 }
 
 export const Gallery = ({
-  heading = "Gallery",
   items = [],
   description = "This is a gallery of items",
 }: GalleryProps) => {
@@ -49,11 +47,10 @@ export const Gallery = ({
     };
   }, [carouselApi]);
   return (
-    <section className="py-12">
+    <section className="py-6">
       <div className="container">
         <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
           <div className="flex flex-col gap-2 md:gap-4">
-            <h2 className="text-3xl font-semibold md:text-4xl">{heading}</h2>
             <p className="text-sm text-muted-foreground">{description}</p>
           </div>
           <div className="mt-8 flex shrink-0 items-center justify-start gap-2">
@@ -98,7 +95,7 @@ export const Gallery = ({
             {items.map((item) => (
               <CarouselItem key={item.id} className="ml-8 md:max-w-[452px]">
                 <a
-                  href={item.url}
+                  href={item.slug}
                   className="group flex flex-col justify-between"
                 >
                   <div>
@@ -109,7 +106,7 @@ export const Gallery = ({
                             width={1000}
                             height={1000}
                             src={item.image}
-                            alt={item.title}
+                            alt={item.name}
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -117,10 +114,7 @@ export const Gallery = ({
                     </div>
                   </div>
                   <div className="mb-2 line-clamp-3 wrap-break-words pt-4 text-lg font-medium md:mb-3 md:pt-4 md:text-xl lg:pt-4 lg:text-2xl">
-                    {item.title}
-                  </div>
-                  <div className="text-muted-foreground mb-8 line-clamp-2 text-sm md:mb-12 md:text-base lg:mb-9">
-                    {item.summary}
+                    {item.name}
                   </div>
                   <div className="flex items-center text-sm">
                     Read more{" "}

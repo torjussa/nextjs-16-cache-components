@@ -1,5 +1,4 @@
 import { Gallery, GalleryItem } from "@/components/gallery";
-import { Category } from "@/types";
 
 export default async function Categories() {
   async function getCategories(): Promise<GalleryItem[]> {
@@ -8,23 +7,12 @@ export default async function Categories() {
       "https://api.escuelajs.co/api/v1/categories?limit=5"
     );
     const data = await response.json();
-    const items = data.map((p: Category) => ({
-      id: `item-${p.id}`,
-      title: p.name,
-      summary: p.description,
-      url: "#",
-      image: p.image,
-    }));
 
-    // Simulate a delay
+    // Tregt api kall (2 sek)
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    return items;
+    return data;
   }
 
-  return (
-    <main>
-      <Gallery items={await getCategories()} heading="Categories" />
-    </main>
-  );
+  return <Gallery items={await getCategories()} />;
 }

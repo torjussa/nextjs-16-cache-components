@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
         hostname: "i.imgur.com",
       },
     ],
-  }
+  },
 };
 
 export default nextConfig;
