@@ -1,6 +1,4 @@
-import { cacheLife } from "next/cache";
 async function fetchNotifications(): Promise<number> {
-
   // Simulate API delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return Math.floor(Math.random() * 100);

@@ -2,9 +2,7 @@ import Link from "next/link";
 
 import { ModeSwitcher } from "@/components/mode-switcher";
 import { Button } from "@/components/ui/button";
-import { NotificationsCount } from "./notifications";
-import { AlarmClock, Bell } from "lucide-react";
-import { Suspense } from "react";
+import { Bell } from "lucide-react";
 
 export function Navbar() {
   return (
@@ -28,9 +26,7 @@ export function Navbar() {
             >
               <div className="relative">
                 <Bell size={46} />
-                <Suspense>
-                  <NotificationsCount />
-                </Suspense>
+                {/* <NotificationsCount /> */}
               </div>
             </Button>
           </Link>

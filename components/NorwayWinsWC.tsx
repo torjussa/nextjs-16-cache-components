@@ -1,10 +1,7 @@
 import { Trophy } from "lucide-react";
 import { getFifaWCWinPercentage } from "@/data-access/getFifaRank";
-import { cacheLife, cacheTag } from "next/cache";
 
 export default async function NorwayWinsWCPercentage() {
-  "use cache";
-  cacheTag("fifa-wc-win-percentage");
 
   const winPercentage = await getFifaWCWinPercentage();
 

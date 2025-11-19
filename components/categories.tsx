@@ -9,7 +9,7 @@ export default async function Categories() {
     const data = await response.json();
 
     // Tregt api kall (2 sek)
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     return data;
   }
